@@ -18,7 +18,7 @@
         <!-- Metro UI CSS JavaScript plugins-->
         <script src="<?= base_url(); ?>js/metro/load-metro.js"></script>
 
-        
+
         <base href="<?php echo base_url(); ?>" />
         <title><?php echo $this->config->item('company') . ' -- ' . $this->lang->line('common_powered_by') . ' OS Point Of Sale' ?></title>
         <link rel="stylesheet" rev="stylesheet" href="<?php echo base_url(); ?>css/ospos.css" />
@@ -45,6 +45,10 @@
             html {
                 overflow: auto;
             }
+            body {
+                //background: #777;
+                background-image: url(' <?php echo base_url();?>images/bg.jpg');
+            }
         </style>
         <script type="text/javascript">
 
@@ -56,14 +60,14 @@
 //Default is that SSI method is uncommented, and PHP is commented:
 
 //var currenttime = '<!--#config timefmt="%B %d, %Y %H:%M:%S"--><!--#echo var="DATE_LOCAL" -->' //SSI method of getting server date
-var currenttime = '<? print date("F d, Y H:i:s", time())?>' //PHP method of getting server date
+            var currenttime = '<? print date("F d, Y H:i:s", time())?>' //PHP method of getting server date
 
 ///////////Stop editting here/////////////////////////////////
 
-var montharray=new Array("January","February","March","April","May","June","July","August","September","October","November","December")
-var serverdate=new Date(currenttime)
+                var montharray = new Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December")
+                var serverdate = new Date(currenttime)
 
-function padlength(what){
+                function padlength(what){
 var output=(what.toString().length==1)? "0"+what : what
 return output
 }
@@ -79,14 +83,14 @@ window.onload=function(){
 setInterval("displaytime()", 1000)
 }
 
-</script>
+        </script>
 
     </head>
     <body class="metro">
-        <div class="navbar">
+        <div class="navigation-bar dark">
             <div class="navbar-content">
 
-                <a class="element" href="./"><span class="icon-grid-view"></span> Open Source Point of Sale <sup><?php echo $this->config->item('application_version'); ?></sup></a>
+                <a class="element" href="<?=base_url();?>"><span class="icon-grid-view"></span> Open Source Point of Sale <sup><?php echo $this->config->item('application_version'); ?></sup></a>
                 <span class="element-divider"></span>
 
                 <div class="no-tablet-portrait">
@@ -95,15 +99,6 @@ setInterval("displaytime()", 1000)
                     <span class="element-divider"></span>
                     <div class="element"><?php echo $this->config->item('company'); ?></div>
                     <span class="element-divider"></span>
-                    <div class="element input-element">
-                        <form>
-                            <div class="input-control text">
-                                <input type="text" placeholder="Search...">
-                                <button class="btn-search"></button>
-                            </div>
-                        </form>
-                    </div>
-
                     <a class="element place-right" href="<?php echo base_url(); ?>home/logout"><span class="icon-locked-2"></span></a>
                     <span class="element-divider place-right"></span>
                     <button class="element image-button image-left place-right">
@@ -113,24 +108,30 @@ setInterval("displaytime()", 1000)
                 </div>
             </div>
         </div>
-        <nav class="horizontal-menu compact">
-            <ul>
+        <div class="grid">
+            <div class="row">
+                <div class="span4">
+                               <nav class="sidebar">
+<ul>
+<li class="title">Main Menu</li>
 
-                <?php
-                foreach ($allowed_modules->result() as $module) {
-                    ?>
-                    <li>
-                        <a  href="<?php echo site_url("$module->module_id"); ?>">
-                            <img src="<?php echo base_url() . 'images/menubar/' . $module->module_id . '.png'; ?>" width="16px" height="16px" border="0" alt="Menubar Image" />&nbsp;
-                               <?php echo $this->lang->line("module_" . $module->module_id) ?></a>
-                        <!--<div class="menu_item">
-                            <a href="">
-                                </a><br />
-                            <a href="<?php echo site_url("$module->module_id"); ?>"><?php echo $this->lang->line("module_" . $module->module_id) ?></a>
-                        </div>-->
-                    </li>
-                    <?php
-                }
-                ?>
-            </ul>
-        </nav>
+
+                            <?php
+                            foreach ($allowed_modules->result() as $module) {
+                                ?>
+                                <li>
+                                    <a  href="<?php echo site_url("$module->module_id"); ?>">
+                                        <img src="<?php echo base_url() . 'images/menubar/' . $module->module_id . '.png'; ?>" width="16px" height="16px" border="0" alt="Menubar Image" />&nbsp;
+                                        <?php echo $this->lang->line("module_" . $module->module_id) ?></a>
+                                    <!--<div class="menu_item">
+                                        <a href="">
+                                            </a><br />
+                                        <a href="<?php echo site_url("$module->module_id"); ?>"><?php echo $this->lang->line("module_" . $module->module_id) ?></a>
+                                    </div>-->
+                                </li>
+                                <?php
+                            }
+                            ?>
+                        </ul>
+                    </nav>
+                </div>
