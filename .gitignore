@@ -7,3 +7,4 @@ git-svn-diff.py
 .buildpath
 .project
 .settings/*
+/nbproject/private/

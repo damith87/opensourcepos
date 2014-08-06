@@ -1,52 +1,87 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" rev="stylesheet" href="<?php echo base_url();?>css/login.css" />
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>Open Source Point Of Sale <?php echo $this->lang->line('login_login'); ?></title>
-<script src="<?php echo base_url();?>js/jquery-1.2.6.min.js" type="text/javascript" language="javascript" charset="UTF-8"></script>
-<script type="text/javascript">
-$(document).ready(function()
-{
-	$("#login_form input:first").focus();
-});
-</script>
-</head>
-<body>
-<h1>Open Source Point Of Sale <?php echo $this->config->item('application_version'); ?></h1>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="product" content="FDCAS">
+        <meta name="description" content="Financial Data Collection and Analyisis Systesm">
+        <meta name="author" content="T.H.M Kothalawala">
 
-<?php echo form_open('login') ?>
-<div id="container">
-<?php echo validation_errors(); ?>
-	<div id="top">
-	<?php echo $this->lang->line('login_login'); ?>
-	</div>
-	<div id="login_form">
-		<div id="welcome_message">
-		<?php echo $this->lang->line('login_welcome_message'); ?>
-		</div>
-		
-		<div class="form_field_label"><?php echo $this->lang->line('login_username'); ?>: </div>
-		<div class="form_field">
-		<?php echo form_input(array(
-		'name'=>'username', 
-		'size'=>'20')); ?>
-		</div>
+        <link href="<?= base_url(); ?>css/metro-bootstrap.css" rel="stylesheet">
+        <!--<link href="css/metro-bootstrap-responsive.css" rel="stylesheet">-->
+        <link href="<?= base_url(); ?>css/iconFont.min.css" rel="stylesheet">
+        <link href="<?= base_url(); ?>css/fdcas.custom.css" rel="stylesheet">
+        <!-- Load JavaScript Libraries -->
+        <script src="<?= base_url(); ?>js/jquery/jquery.min.js"></script>
+        <script src="<?= base_url(); ?>js/jquery/jquery.widget.min.js"></script>
 
-		<div class="form_field_label"><?php echo $this->lang->line('login_password'); ?>: </div>
-		<div class="form_field">
-		<?php echo form_password(array(
-		'name'=>'password', 
-		'size'=>'20')); ?>
-		
-		</div>
-		
-		<div id="submit_button">
-		<?php echo form_submit('loginButton','Go'); ?>
-		</div>
-	</div>
-</div>
-<?php echo form_close(); ?>
-</body>
+        <!-- Metro UI CSS JavaScript plugins-->
+        <script src="<?= base_url(); ?>js/metro/load-metro.js"></script>
+
+        <title>Open Source Point Of Sale <?php echo $this->lang->line('login_login'); ?></title>
+        <!-- <script src="<?php echo base_url(); ?>js/jquery-1.2.6.min.js" type="text/javascript" language="javascript" charset="UTF-8"></script>-->
+        <script type="text/javascript">
+            $(document).ready(function()
+            {
+                $("#login_form input:first").focus();
+            });
+        </script>
+        <style type="text/css">
+            .dct {
+                margin-left: auto ;
+                margin-right: auto ;
+            }
+        </style>
+    </head>
+    <body class="metro">
+
+        <h1 class="text-center">Open Source Point Of Sale <?php echo $this->config->item('application_version'); ?></h1>
+        <div class="dct span8 padding20 border">
+            <?php echo form_open('login') ?>
+            <div >
+                <div class="text-shadow">
+                    <h2> 
+                        <i class="icon-locked"> </i>
+                        <?php echo $this->lang->line('login_login'); ?>
+                    </h2>
+                </div>
+                <div id="login_form">
+                    <div class="text-success">
+                        <p>
+                        <?php echo $this->lang->line('login_welcome_message'); ?>
+                        </p>
+                    </div>
+
+                    <div class="form_field_label"><?php echo $this->lang->line('login_username'); ?>: </div>
+                    <div class="input-control text" data-role="input-control">
+                        
+                            <?php
+                            echo form_input(array(
+                                'name' => 'username',
+                                'size' => '20'));
+                            ?>
+                            <button class="btn-clear" tabindex="-1"></button>
+                    </div>
+
+                    <div class="form_field_label"><?php echo $this->lang->line('login_password'); ?>: </div>
+                    <div class="input-control password" data-role="input-control">
+
+                        <?php
+                        echo form_password(array(
+                            'name' => 'password',
+                            'size' => '20'));
+                        ?>
+                        <button class="btn-reveal" tabindex="-1"></button>
+                    </div>
+                    <div class="text-warning"><?php echo validation_errors(); ?></div>
+                    <div class="button">
+                        <?php echo form_submit('loginButton', 'Go'); ?>
+                    </div>
+
+                </div>
+            </div>
+            <?php echo form_close(); ?>
+        </div>
+
+    </body>
 </html>
