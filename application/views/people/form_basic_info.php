@@ -4,7 +4,9 @@
 	<?php echo form_input(array(
 		'name'=>'first_name',
 		'id'=>'first_name',
-		'value'=>$person_info->first_name)
+		'value'=>$person_info->first_name,
+                'data-rule-required'=>'true',
+                'data-msg-required'=>'Please First Name')
 	);?>
 	</div>
 </div>
