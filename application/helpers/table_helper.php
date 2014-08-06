@@ -151,7 +151,7 @@ Gets the html table to manage items.
 function get_items_manage_table($items,$controller)
 {
 	$CI =& get_instance();
-	$table='<table class="tablesorter" id="sortable_table">';
+	$table='<table class="table bordered striped" id="sortable_table">';
 	
 	$headers = array('<input type="checkbox" id="select_all" />', 
 	$CI->lang->line('items_item_number'),
@@ -191,7 +191,7 @@ function get_items_manage_table_data_rows($items,$controller)
 	
 	if($items->num_rows()==0)
 	{
-		$table_data_rows.="<tr><td colspan='11'><div class='warning_message' style='padding:7px;'>".$CI->lang->line('items_no_items_to_display')."</div></tr></tr>";
+		$table_data_rows.="<tr><td colspan='11'><div class='warning' style='padding:7px;'>".$CI->lang->line('items_no_items_to_display')."</div></tr></tr>";
 	}
 	
 	return $table_data_rows;
