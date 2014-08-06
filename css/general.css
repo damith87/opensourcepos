@@ -142,7 +142,7 @@ input
 
 input#search
 {
-	padding: 0px;
+	/*padding: 0px;*/
 }
 
 #select_customer_form input, #select_supplier_form input

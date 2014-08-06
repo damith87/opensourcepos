@@ -5,7 +5,7 @@ Gets the html table to manage people.
 function get_people_manage_table($people,$controller)
 {
 	$CI =& get_instance();
-	$table='<table class="tablesorter" id="sortable_table">';
+	$table='<table class="table bordered striped" id="sortable_table">';
 	
 	$headers = array('<input type="checkbox" id="select_all" />', 
 	$CI->lang->line('common_last_name'),

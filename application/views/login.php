@@ -31,12 +31,22 @@
                 margin-left: auto ;
                 margin-right: auto ;
             }
+            
+        </style>
+        <style type="text/css">
+            html {
+                overflow: auto;
+            }
+            body {
+                //background: #777;
+                background-image: url(' <?php echo base_url();?>images/bg.jpg');
+            }
         </style>
     </head>
     <body class="metro">
 
-        <h1 class="text-center">Open Source Point Of Sale <?php echo $this->config->item('application_version'); ?></h1>
-        <div class="dct span8 padding20 border">
+        <h1 class="text-center fg-white">Open Source Point Of Sale <?php echo $this->config->item('application_version'); ?></h1>
+        <div class="dct span6 padding20 border  bg-white">
             <?php echo form_open('login') ?>
             <div >
                 <div class="text-shadow">

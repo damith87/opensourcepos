@@ -24,7 +24,7 @@
         <link rel="stylesheet" rev="stylesheet" href="<?php echo base_url(); ?>css/ospos.css" />
         <link rel="stylesheet" rev="stylesheet" href="<?php echo base_url(); ?>css/ospos_print.css"  media="print"/>
         <script>BASE_URL = '<?php echo site_url(); ?>';</script>
-        <script src="<?php echo base_url(); ?>js/jquery-1.2.6.min.js" type="text/javascript" language="javascript" charset="UTF-8"></script>
+        <script src="<?php echo base_url(); ?>js/jquery-migrate-1.2.1.min.js" type="text/javascript" language="javascript" charset="UTF-8"></script>
         <script src="<?php echo base_url(); ?>js/jquery.color.js" type="text/javascript" language="javascript" charset="UTF-8"></script>
         <script src="<?php echo base_url(); ?>js/jquery.metadata.js" type="text/javascript" language="javascript" charset="UTF-8"></script>
         <script src="<?php echo base_url(); ?>js/jquery.form.js" type="text/javascript" language="javascript" charset="UTF-8"></script>
@@ -84,13 +84,20 @@ setInterval("displaytime()", 1000)
 }
 
         </script>
+                <style type="text/css">
+            .dct {
+                margin-left: auto ;
+                margin-right: auto ;
+            }
+            
+        </style>
 
     </head>
     <body class="metro">
-        <div class="navigation-bar dark">
+        <div class="navigation-bar dark ">
             <div class="navbar-content">
 
-                <a class="element" href="<?=base_url();?>"><span class="icon-grid-view"></span> Open Source Point of Sale <sup><?php echo $this->config->item('application_version'); ?></sup></a>
+                <a class="element" href="<?=base_url();?>"><span class="icon-grid-view"></span> osPOS <sup><?php echo $this->config->item('application_version'); ?></sup></a>
                 <span class="element-divider"></span>
 
                 <div class="no-tablet-portrait">
@@ -98,7 +105,7 @@ setInterval("displaytime()", 1000)
                     <div class="element"><div id="servertime"></div></div>
                     <span class="element-divider"></span>
                     <div class="element"><?php echo $this->config->item('company'); ?></div>
-                    <span class="element-divider"></span>
+                    
                     <a class="element place-right" href="<?php echo base_url(); ?>home/logout"><span class="icon-locked-2"></span></a>
                     <span class="element-divider place-right"></span>
                     <button class="element image-button image-left place-right">
@@ -110,7 +117,7 @@ setInterval("displaytime()", 1000)
         </div>
         <div class="grid">
             <div class="row">
-                <div class="span4">
+                <div class="span3">
                                <nav class="sidebar">
 <ul>
 <li class="title">Main Menu</li>
