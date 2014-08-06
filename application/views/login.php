@@ -3,9 +3,9 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-        <meta name="product" content="FDCAS">
-        <meta name="description" content="Financial Data Collection and Analyisis Systesm">
-        <meta name="author" content="T.H.M Kothalawala">
+        <meta name="product" content="Open Source Point Of Sale">
+        <meta name="description" content="Open Source Point Of Sale <?php echo $this->lang->line('login_login'); ?>">
+        <meta name="author" content="Revamped by Damith Rushika Kothalawala">
 
         <link href="<?= base_url(); ?>css/metro-bootstrap.css" rel="stylesheet">
         <!--<link href="css/metro-bootstrap-responsive.css" rel="stylesheet">-->
